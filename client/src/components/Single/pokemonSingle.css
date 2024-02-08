@@ -1,0 +1,1094 @@
+@import url("https://fonts.cdnfonts.com/css/pokemon-solid");
+
+.bg-single {
+  animation:slide 3s ease-in-out infinite alternate;
+  background-image: linear-gradient(-60deg, #09f 30%, rgb(255, 123, 0) 70%, yellow 30%);
+  bottom:0;
+  left:-50%;
+  opacity:.5;
+  position:fixed;
+  right:-50%;
+  top:0;
+  z-index:-1;
+}
+
+.bg2-pokedex {
+  animation-direction:alternate-reverse;
+  animation-duration:9s;
+}
+
+.bg3-pokedex {
+  animation-duration:9s;
+}
+
+@keyframes slide {
+  0% {
+    transform:translateX(-25%);
+  }
+  100% {
+    transform:translateX(25%);
+  }
+}
+
+.inner-image {
+  position: relative;
+  left: 20%;
+  bottom: 35%;
+  width: 210px;
+  z-index: 1;
+}
+.inner-background{
+  position: relative;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  width: 450px;
+  height: 370px;
+  margin-top: 11%;
+  border: 4px solid  rgb(88, 72, 47);
+  box-shadow:
+  2px 2px 1px rgb(63, 5, 15),
+  3px 3px 1px rgb(0, 0, 128),
+  4px 4px 1px rgb(61, 5, 36),
+  5px 5px 1px rgb(2, 33, 2),
+  6px 6px 1px rgb(1, 134, 56),
+  7px 7px 1px rgb(0, 119, 128);
+}
+
+
+.fight-images {
+  width: 300px;
+}
+.fighting-page h1{
+  font-family: "Pokemon Solid", sans-serif;
+  letter-spacing: 0.8rem;
+  color: rgb(155, 8, 8);
+  padding-top: 5rem;
+  font-size: 1.5rem;
+}
+
+.fighting-page .titleTypes{
+  font-family: "Spirit Ginger", sans-serif;
+  text-align: center;
+  letter-spacing: 0.6rem;
+  background-color: #dde0d03e;
+  color: rgb(255, 255, 255);
+  padding: 0.4rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.titleTypesContainer {
+  display: flex;
+  justify-content: center;
+  gap: 30px
+}
+
+.fighting-page{
+ display: flex;
+ justify-content: center;
+ /* margin-top: 12rem; */
+ margin-bottom: 3rem;
+ gap: 12%;
+ position: relative;
+ padding: 5rem;
+ margin: -1rem auto 0;
+ width: 85%;
+ /* height: 85%; */
+ border: 10px solid  #155799;
+ border-radius: 15px;
+ background-color: rgb(29, 29, 42);
+ background-image: url(../../assets/output-onlinepngtools.png);
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position-x: center;
+ box-shadow: 0 120px 100px rgba(0.5, 0, 0, 0.8);
+}
+
+
+.fighting-page:before, .fighting-page:after {
+	content: '';
+	position: absolute;
+	left: -2px;
+	top: -2px;
+	background: linear-gradient(45deg, #fb0094, #0000ff, #00ff00,#ffff00, #ff0000, #fb0094, 
+		#0000ff, #00ff00,#ffff00, #ff0000);
+	background-size: 400%;
+	width: calc(100% + 4px);
+	height: calc(100% + 4px);
+	z-index: -1;
+	animation: steam 20s linear infinite;
+}
+
+@keyframes steam {
+	0% {
+		background-position: 0 0;
+	}
+	50% {
+		background-position: 400% 0;
+	}
+	100% {
+		background-position: 0 0;
+	}
+}
+
+.fighting-page:after {
+	filter: blur(50px);
+}
+
+.displaySinglePokemon {
+  display: flex;
+  justify-content: center;
+}
+
+h1 {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 0.5%;
+}
+
+
+.disableSinglePokemon {
+    display: none;
+}
+
+.active{
+    /* display: inline-block; */
+    display: flex;
+    justify-content: center;
+    vertical-align: middle;
+    gap: 15%;
+    height: 87vh;
+    margin-top: 1%;
+  }
+
+  .disabled {
+    display: none;
+  }
+
+.battlefield {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  z-index: 1;
+  margin-top: -10%;
+}
+
+.container-singlePoke{
+  display: flex;
+  flex-direction: row;
+  gap: 13%;
+  font-family: "Pokemon Solid", sans-serif;
+  padding: 7.5%;
+}
+
+.img-name-container{
+  display: flex;
+  flex-direction: column;
+}
+
+
+.nameType-container{
+  margin: 0;
+  margin-top: -40%;
+  letter-spacing: 1rem;
+}
+
+.nameType-container p{
+margin-bottom: 15%;
+font-family: "Spirit Ginger", sans-serif;
+font-size: 2rem;
+
+}
+/* .fightBtn button {
+    width: fit-content;
+    min-width: 8rem;
+    height: 3rem;
+} */
+
+/*FIGHT BUTTON*/
+.messageBtnActive {
+  position: relative;
+  width: 11em;
+  height: 4em;
+  outline: none;
+  transition: 0.1s;
+  background-color: transparent;
+  border: none;
+  font-weight: bold;
+  color: #2c3031;
+  z-index: 1;
+}
+
+#clip {
+  --color: #d2d7de;
+  position: absolute;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  border: 5px double var(--color);
+  box-shadow: inset 0px 0px 15px #abc6dc;
+  -webkit-clip-path: polygon(30% 0%, 70% 0%, 100% 30%, 100% 70%, 70% 100%, 30% 100%, 0% 70%, 0% 30%);
+}
+
+.arrow {
+  position: absolute;
+  transition: 0.2s;
+  background-color: #88a7dd;
+  top: 35%;
+  width: 11%;
+  height: 30%;
+}
+
+#leftArrow {
+  left: -13.5%;
+  -webkit-clip-path: polygon(100% 0, 100% 100%, 0 50%);
+}
+
+#rightArrow {
+  -webkit-clip-path: polygon(100% 49%, 0 0, 0 100%);
+  left: 102%;
+}
+
+button:hover #rightArrow {
+  background-color: #27c39f;
+  left: -15%;
+  animation: 0.6s ease-in-out both infinite alternate rightArrow8;
+}
+
+button:hover #leftArrow {
+  background-color: #27c39f;
+  left: 103%;
+  animation: 0.6s ease-in-out both infinite alternate leftArrow8;
+}
+
+.corner {
+  position: absolute;
+  width: 4em;
+  height: 4em;
+  background-color: #cad6ec;
+  box-shadow: inset 1px 1px 8px #2781c3;
+  transform: scale(1) rotate(45deg);
+  transition: 0.2s;
+}
+
+#rightTop {
+  top: -1.98em;
+  left: 91%;
+}
+
+#leftTop {
+  top: -1.96em;
+  left: -3.0em;
+}
+
+#leftBottom {
+  top: 2.10em;
+  left: -2.15em;
+}
+
+#rightBottom {
+  top: 45%;
+  left: 88%;
+}
+
+button:hover #leftTop {
+  animation: 0.1s ease-in-out 0.05s both changeColor8,
+  0.2s linear 0.4s both lightEffect8;
+}
+
+button:hover #rightTop {
+  animation: 0.1s ease-in-out 0.15s both changeColor8,
+  0.2s linear 0.4s both lightEffect8;
+}
+
+button:hover #rightBottom {
+  animation: 0.1s ease-in-out 0.25s both changeColor8,
+  0.2s linear 0.4s both lightEffect8;
+}
+
+button:hover #leftBottom {
+  animation: 0.1s ease-in-out 0.35s both changeColor8,
+  0.2s linear 0.4s both lightEffect8;
+}
+
+button:hover .corner {
+  transform: scale(1.25) rotate(45deg);
+}
+
+button:hover #clip {
+  animation: 0.2s ease-in-out 0.55s both greenLight8;
+  --color: #27c39f;
+}
+
+@keyframes changeColor8 {
+  from {
+    background-color: #2781c3;
+  }
+
+  to {
+    background-color: #27c39f;
+  }
+}
+
+@keyframes lightEffect8 {
+  from {
+    box-shadow: 1px 1px 5px #27c39f;
+  }
+
+  to {
+    box-shadow: 0 0 2px #27c39f;
+  }
+}
+
+@keyframes greenLight8 {
+  from {
+  }
+
+  to {
+    box-shadow: inset 0px 0px 32px #27c39f;
+  }
+}
+
+@keyframes leftArrow8 {
+  from {
+    transform: translate(0px);
+  }
+
+  to {
+    transform: translateX(10px);
+  }
+}
+
+@keyframes rightArrow8 {
+  from {
+    transform: translate(0px);
+  }
+
+  to {
+    transform: translateX(-10px);
+  }
+}
+
+
+
+
+.round {
+
+}
+
+.roundContainerActive, .roundContainerActiveSecond {
+  display: flex;
+  justify-content: center;
+  gap: 15%;
+  /* border: 2px solid black; */
+  /* border-radius: 50%;
+  width: 60%;
+  height: 60%;
+  padding: 4rem; */
+  margin-top: 10%;
+
+}
+
+.roundContainerDisabled, .roundContainerDisabledSecond {
+  display: none;
+}
+
+.defeatedMessageActive{
+  display: flex;
+  justify-content: center;
+  width: fit-content;
+  margin: auto;
+  border: 2px solid black;
+}
+
+.defeatedMessageDisabled {
+  display: none;
+}
+
+.spBtnCdActive{
+  display: inline-block;
+}
+/*special attack button*/
+.spBtnStyle {
+  font-family: "Pokemon Solid", sans-serif;
+  --green: #1BFD9C;
+  font-size: 15px;
+  padding: 0.7em 2.7em;
+  letter-spacing: 0.06em;
+  position: relative;
+  font-family: inherit;
+  border-radius: 0.6em;
+  overflow: hidden;
+  transition: all 0.3s;
+  line-height: 1.4em;
+  border: 2px solid var(--green);
+  background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 253, 156, 0.1) 100%);
+  color: var(--green);
+  box-shadow: inset 0 0 10px rgba(1, 43, 24, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+}
+
+.spBtnStyle:hover {
+  color: #82ffc9;
+  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+  font-family: "Pokemon Solid", sans-serif;
+
+}
+
+.spBtnStyle:before {
+  content: "";
+  position: absolute;
+  left: -4em;
+  width: 4em;
+  height: 100%;
+  top: 0;
+  transition: transform .4s ease-in-out;
+  background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%,rgba(27, 253, 156, 0.1) 60% , transparent 100%);
+  font-family: "Pokemon Solid", sans-serif;
+
+}
+
+.spBtnStyle:hover:before {
+  transform: translateX(15em);
+  font-family: "Pokemon Solid", sans-serif;
+
+}
+
+.stat-bars{
+  display: flex;
+  align-items: center;
+  justify-self: flex-start;
+  color: white;
+  /* gap: 1%; */
+}
+.stat-bars span{
+  width: 95px;
+  letter-spacing: 0.1rem;
+  font-family: "Pokemon Solid", sans-serif;
+}
+
+.spanRand{
+  width: 150px;
+}
+
+.choosenStats{
+display: flex;
+flex-direction: column;
+align-content: flex-start;
+height: 100px;
+line-height: 1.8rem;
+}
+.chosen{
+  line-height: 1.8rem;
+}
+
+.opponentStats {
+display: flex;
+flex-direction: column;
+align-content: flex-end;
+}
+
+
+
+/*Testing new style on sp*/
+
+
+.spBtnStyleCD {
+  font-family: "Pokemon Solid", sans-serif;
+  --green: rgba(226, 230, 228, 0.89);
+  font-size: 15px;
+  padding: 0.7em 2.7em;
+  letter-spacing: 0.06em;
+  position: relative;
+  font-family: inherit;
+  border-radius: 0.6em;
+  overflow: hidden;
+  transition: all 0.3s;
+  line-height: 1.4em;
+  border: 2px solid var(--green);
+  background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 253, 156, 0.1) 100%);
+  color: var(--green);
+  box-shadow: inset 0 0 10px rgba(1, 43, 24, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+}
+
+/* .spBtnStyleCD:hover {
+  color: #82ffc9;
+  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+} */
+
+.spBtnStyleCD:before {
+  content: "";
+  position: absolute;
+  left: -4em;
+  width: 4em;
+  height: 100%;
+  top: 0;
+  transition: transform .4s ease-in-out;
+  background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%,rgba(27, 253, 156, 0.1) 60% , transparent 100%);
+  font-family: "Pokemon Solid", sans-serif;
+
+}
+
+.spBtnStyleCD:hover:before {
+  transform: translateX(15em);
+  font-family: "Pokemon Solid", sans-serif;
+
+}
+
+.spBtnCdDisabled {
+  display:  none;
+}
+
+.movesBtnDisabled {
+  display: none;
+}
+
+.movesBtnActive {
+  display: inline-block;
+}
+
+.messageBtnActive{
+  display: inline-block;
+}
+/*styling normal button*/
+.movesBtnActive {
+  --green: #1BFD9C;
+  font-size: 15px;
+  padding: 0.7em 2.7em;
+  letter-spacing: 0.06em;
+  position: relative;
+  font-family: "Pokemon Solid", sans-serif;
+  border-radius: 0.6em;
+  overflow: hidden;
+  transition: all 0.3s;
+  line-height: 1.4em;
+  border: 2px solid var(--green);
+  background: linear-gradient(to right, rgba(27, 253, 156, 0.1) 1%, transparent 40%,transparent 60% , rgba(27, 253, 156, 0.1) 100%);
+  color: var(--green);
+  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.4), 0 0 9px 3px rgba(27, 253, 156, 0.1);
+}
+
+.movesBtnActive:hover {
+  color: #82ffc9;
+  box-shadow: inset 0 0 10px rgba(27, 253, 156, 0.6), 0 0 9px 3px rgba(27, 253, 156, 0.2);
+}
+
+.movesBtnActive:before {
+  content: "";
+  position: absolute;
+  left: -4em;
+  width: 4em;
+  height: 100%;
+  top: 0;
+  transition: transform .4s ease-in-out;
+  background: linear-gradient(to right, transparent 1%, rgba(27, 253, 156, 0.1) 40%,rgba(27, 253, 156, 0.1) 60% , transparent 100%);
+}
+
+.movesBtnActive:hover:before {
+  transform: translateX(15em);
+}
+
+
+.messageBtnDisabled{
+  display: none;
+
+}
+
+.gobackBtnActive{
+  display: inline-block;
+}
+.gobackBtnDisabled{
+  display: none;
+}
+
+/*BUTTONS STYLING */
+
+.attack-buttons{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 1rem;
+  margin-left: -35%;
+  font-family: "Pokemon Solid", sans-serif;
+  color: azure;
+}
+
+.normalSp-attack{
+display: flex;
+gap: 3rem;
+margin-left: 20%;
+margin-top: 15%;
+}
+
+.fightBtn button {
+  height: 3rem;
+  font-size: 18px;
+  letter-spacing: 0.2rem;
+  font-family: "Spirit Ginger", sans-serif;
+  width: 35ch;
+  
+}
+
+.imgOpponent {
+  animation: shake3856 .3s linear infinite both;
+
+ }
+
+ @keyframes shake3856 {
+  0% {
+   -webkit-transform: translate(0);
+   transform: translate(0);
+  }
+
+  20% {
+   -webkit-transform: translate(-2px, 2px);
+   transform: translate(-2px, 2px);
+  }
+
+  40% {
+   -webkit-transform: translate(-2px, -2px);
+   transform: translate(-2px, -2px);
+  }
+
+  60% {
+   -webkit-transform: translate(2px, 2px);
+   transform: translate(2px, 2px);
+  }
+
+  80% {
+   -webkit-transform: translate(2px, -2px);
+   transform: translate(2px, -2px);
+  }
+
+  100% {
+   -webkit-transform: translate(0);
+   transform: translate(0);
+  }
+ }
+
+.imgOpponentOff {
+
+}
+
+.imgChosen {
+  animation: shake3856 .3s linear infinite both;
+ }
+
+ @keyframes shake3856 {
+  0% {
+   -webkit-transform: translate(0);
+   transform: translate(0);
+  }
+
+  20% {
+   -webkit-transform: translate(-10px, 10px);
+   transform: translate(-10px, 10px);
+  }
+
+  40% {
+   -webkit-transform: translate(-10px, -10px);
+   transform: translate(-10px, -10px);
+  }
+
+  60% {
+   -webkit-transform: translate(10px, 10px);
+   transform: translate(10px, 10px);
+  }
+
+  80% {
+   -webkit-transform: translate(10px, -10px);
+   transform: translate(10px, -10px);
+  }
+
+  100% {
+   -webkit-transform: translate(0);
+   transform: translate(0);
+  }
+ }
+
+.imgChosenOff {
+
+}
+
+/*For testing purposes*/
+.bar-graph .year {
+  -webkit-animation: fade-in-text 2.2s 0.1s forwards;
+  -moz-animation: fade-in-text 2.2s 0.1s forwards;
+  animation: fade-in-text 2.2s 0.1s forwards;
+}
+
+.bar-graph-vertical {
+  margin-top: 80px;
+  max-width: 680px;
+}
+
+.bar-graph-vertical .bar-container {
+  float: left;
+  height: 200px;
+  margin-right: 18px;
+  position: relative;
+  text-align: center;
+  width: 40px;
+}
+
+.bar-graph-vertical .bar {
+  border-radius: 3px;
+  bottom: 15px;
+  position: absolute;
+  width: 40px;
+}
+
+.yearS {
+  bottom: -18px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  font-size: 13px;
+  line-height: 1rem;
+  letter-spacing: 0.2rem;
+  font-weight: bolder;
+}
+
+.bar-graph-vertical .year {
+  bottom: -14px;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  font-size: 15px;
+  letter-spacing: 0.2rem;
+
+  /* -webkit-transform: rotate(90deg); */
+  /* -moz-transform: rotate(90deg); */
+  /* -o-transform: rotate(90deg); */
+  /* -ms-transform: rotate(90deg); */
+  /* transform: rotate(90deg); */
+}
+
+.bar-graph-two .bar::after {
+  -webkit-animation: fade-in-text 2.2s 0.1s forwards;
+  -moz-animation: fade-in-text 2.2s 0.1s forwards;
+  animation: fade-in-text 2.2s 0.1s forwards;
+  color: rgb(22, 18, 18);
+  content: attr(data-percentage);
+  font-weight: 900;
+  left: 0;
+  margin: 0 auto;
+  position: absolute;
+  right: 0;
+  text-align: left;
+  top: 24px;
+  font-family: "Spirit Ginger", sans-serif;
+  letter-spacing: 0.2rem;
+  -webkit-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  transform: rotate(90deg);
+  font-size: 0.9rem;
+}
+
+.bar-graph-two .bar-one .bar {
+  background-color: rgba(74, 214, 160, 0.432);
+  -webkit-animation: show-bar-one-vertical 1.2s 0.1s forwards;
+  -moz-animation: show-bar-one-vertical 1.2s 0.1s forwards;
+  animation: show-bar-one-vertical 1.2s 0.1s forwards;
+}
+
+.bar-graph-two .bar-two .bar {
+  background-color:rgba(7, 212, 133, 0.904);
+  -webkit-animation: show-bar-two-vertical 1.2s 0.2s forwards;
+  -moz-animation: show-bar-two-vertical 1.2s 0.2s forwards;
+  animation: show-bar-two-vertical 1.2s 0.2s forwards;
+}
+
+.bar-graph-two .bar-three .bar {
+  background-color: rgb(74, 214, 160) ;
+  -webkit-animation: show-bar-three-vertical 1.2s 0.3s forwards;
+  -moz-animation: show-bar-three-vertical 1.2s 0.3s forwards;
+  animation: show-bar-three-vertical 1.2s 0.3s forwards;
+}
+
+.bar-graph-two .bar-four .bar {
+  background-color: rgba(9, 104, 68, 0.822);
+  -webkit-animation: show-bar-four-vertical 1.2s 0.4s forwards;
+  -moz-animation: show-bar-four-vertical 1.2s 0.4s forwards;
+  animation: show-bar-four-vertical 1.2s 0.4s forwards;
+}
+
+.bar-graph-two .bar-five .bar {
+  background-color: rgb(35, 151, 107);
+  -webkit-animation: show-bar-four-vertical 1.2s 0.4s forwards;
+  -moz-animation: show-bar-four-vertical 1.2s 0.4s forwards;
+  animation: show-bar-four-vertical 1.2s 0.4s forwards;
+}
+
+.bar-graph-two .bar-six .bar {
+  background-color:rgba(40, 107, 68, 0.76);
+  -webkit-animation: show-bar-four-vertical 1.2s 0.4s forwards;
+  -moz-animation: show-bar-four-vertical 1.2s 0.4s forwards;
+  animation: show-bar-four-vertical 1.2s 0.4s forwards;
+}
+
+.form__group {
+  position: relative;
+  padding: 20px 0 0;
+  width: 100%;
+  max-width: 180px;
+  z-index: 1;
+}
+
+.form__field {
+  font-family: inherit;
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid #3addb7;
+  outline: 0;
+  font-size: 17px;
+  color: rgb(63, 208, 186);
+  padding: 7px 0;
+  background: transparent;
+  transition: border-color 0.2s;
+  text-align: center;
+  font-weight: bold;
+}
+
+.form__field::placeholder {
+  color: transparent;
+}
+
+.form__field:placeholder-shown ~ .form__label {
+  font-size: 17px;
+  cursor: text;
+  top: 20px;
+}
+
+.form__label {
+  position: absolute;
+  margin: 0% 30%;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #2cdfd0;
+  pointer-events: none;
+  width: 100%;
+}
+
+.form__field:focus {
+  padding-bottom: 6px;
+  font-weight: 700;
+  border-width: 3px;
+  border-image: linear-gradient(to right, #116399, #38caef);
+  border-image-slice: 1;
+  text-align: center;
+
+}
+
+.form__field:focus ~ .form__label {
+  position: absolute;
+  margin: 0% 28%;
+  top: 0;
+  display: block;
+  transition: 0.2s;
+  font-size: 17px;
+  color: #38caef;
+  font-weight: 700;
+}
+
+.nameContainer {
+  display: flex;
+  justify-content: center;
+  margin-top: 2%;
+  margin-bottom: 3%;
+}
+
+.nameContainerDisabled {
+  display: none;
+}
+
+.nameContainerPokemonDisabled {
+  display: none;
+}
+
+/* reset input */
+.form__field:required, .form__field:invalid {
+  box-shadow: none;
+}
+
+.statsBar {
+  margin-top:5%;
+  width: 30rem;
+}
+
+.buttonsContainer {
+  display:flex;
+  justify-content: space-between;
+  /* gap: 2%; */
+}
+
+.buttonsContainerDisabled {
+  display: none;
+}
+
+.buttonSelection {
+  position: relative;
+  margin: 0;
+  padding: 17px 35px;
+  outline: none;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  background-color: #fff;
+  border: 1px solid rgba(22, 76, 167, 0.6);
+  border-radius: 10px;
+  color: #1d89ff;
+  font-weight: 400;
+  font-family: inherit;
+  z-index: 0;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.02, 0.01, 0.47, 1);
+}
+
+.buttonSelection span {
+  color: #164ca7;
+  font-size: 14px;
+  font-weight: 500;
+  letter-spacing: 0.7px;
+}
+
+.buttonSelection:hover {
+  animation: rotate624 0.7s ease-in-out both;
+}
+
+.buttonSelection:hover span {
+  animation: storm1261 0.7s ease-in-out both;
+  animation-delay: 0.06s;
+}
+
+@keyframes rotate624 {
+  0% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+
+  25% {
+    transform: rotate(3deg) translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: rotate(-3deg) translate3d(0, 0, 0);
+  }
+
+  75% {
+    transform: rotate(1deg) translate3d(0, 0, 0);
+  }
+
+  100% {
+    transform: rotate(0deg) translate3d(0, 0, 0);
+  }
+}
+
+@keyframes storm1261 {
+  0% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+
+  25% {
+    transform: translate3d(4px, 0, 0) translateZ(0);
+  }
+
+  50% {
+    transform: translate3d(-3px, 0, 0) translateZ(0);
+  }
+
+  75% {
+    transform: translate3d(2px, 0, 0) translateZ(0);
+  }
+
+  100% {
+    transform: translate3d(0, 0, 0) translateZ(0);
+  }
+}
+
+.btn-shine {
+  border: 4px solid #031f0e;
+  border-radius: 6rem;
+  overflow: hidden;
+  position: relative;
+  padding: 1rem;
+  color: rgb(1, 27, 20);
+  letter-spacing: 0.2rem;
+  background-color: rgba(240, 255, 255, 0.422);
+  width: 200px;
+}
+
+.btn-shine span {
+  z-index: 20;
+}
+
+.btn-shine:after {
+  background: #38ef7d;
+  content: "";
+  height: 155px;
+  left: -75px;
+  opacity: 0.4;
+  position: absolute;
+  top: -50px;
+  transform: rotate(35deg);
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+  width: 50px;
+  z-index: -10;
+}
+
+.btn-shine:hover:after {
+  left: 120%;
+  transition: all 550ms cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.progress-bar {
+  width: 100%;
+  background-color: #e0e0e0;
+  padding: 3px;
+  border-radius: 3px;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, .2);
+}
+
+.progress-bar-fill {
+  display: block;
+  height: 22px;
+  background-color: #f13a3a;
+  border-radius: 3px;
+  transition: width 500ms ease-in-out;
+}
+
+.progress-bar-fill-disabled {
+  display: none;
+}
+
+
+
+@media screen and (min-width: 350px) and (max-width: 760px)  {
+  .container-singlePoke{
+    display: flex;
+    flex-direction: column;
+
+  }
+  .battlefield{
+    background-size: contain;
+    background-position: center;
+  }
+}
+
+.cdSpanActive {
+  display: inline-block;
+}
+
+.cdSpanDisabled {
+  display: none;
+}
