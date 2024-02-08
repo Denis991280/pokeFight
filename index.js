@@ -12,9 +12,12 @@ const leaderboardRouter = require("./routes/leaderboards.js");
 app.use(cors())
 app.use(express.json())
 
-app.use("/pokemon", pokemonRouter)
-app.use("/battleLog", leaderboardRouter)
-app.use("/leaderboard", leaderboardRouter)
+app.use(express.static(path.resolve(__dirname, "client", "dist")));
+
+
+app.use("/api/pokemon", pokemonRouter)
+app.use("/api/battleLog", leaderboardRouter)
+app.use("/api/leaderboard", leaderboardRouter)
 
 app.get("/*", (req, res) => {
   res.sendFile(path.join(__dirname, "client", "dist", "index.html"));

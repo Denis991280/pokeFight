@@ -29,7 +29,7 @@ const NavBar = () => {
     <>
       <nav className="navbar">
         <div className="navbar-container">
-            <img src="../src/assets/logo.png" alt="logo" height={40}/>
+            <img src="/src/assets/logo.png" alt="logo" height={40}/>
           <div className={`navbar-links ${isOpen ? "active" : ""}`}>
             <Link to="/">Home</Link>
             <Link to="/battleLog">Battle Logs</Link>
