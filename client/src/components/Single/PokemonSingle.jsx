@@ -77,7 +77,7 @@ const PokemonSingle = () => {
   const randomNum = Math.floor(Math.random() * 809);
 
   useEffect(() => {
-    getPokemon(`http://localhost:3000/pokemon/${id}`);
+    getPokemon(`/api/pokemon/${id}`);
     getImage(`https://pokeapi.co/api/v2/pokemon/${id}`);
     getOpponent(`https://pokeapi.co/api/v2/pokemon/${randomNum}`); //change id to random number
   }, []);

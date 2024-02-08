@@ -8,7 +8,7 @@ const PokemonInfo = () => {
   const { id, info } = useParams();
 
   useEffect(() => {
-    getInfo(`http://localhost:3000/pokemon/${id}/${info}`);
+    getInfo(`/api/pokemon/${id}/${info}`);
   }, []);
 
   const getInfo = async (url) => {

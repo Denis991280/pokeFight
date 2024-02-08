@@ -7,7 +7,7 @@ export default function Leaderboard() {
   const [leaderboard, setLeaderboard] = useState([]);
 
   useEffect(() => {
-    getLeaderboard(`http://localhost:3000/leaderboard`);
+    getLeaderboard(`/api/leaderboard`);
   }, []);
 
   const getLeaderboard = async (url) => {

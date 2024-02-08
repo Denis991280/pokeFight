@@ -7,7 +7,7 @@ const PokemonList = () => {
   const [pokemons, setPokemons] = useState([]);
 
   useEffect(() => {
-    getList(`http://localhost:3000/pokemon`);
+    getList(`/api/pokemon`);
   }, []);
 
   const getList = async (url) => {

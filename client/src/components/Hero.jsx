@@ -8,7 +8,7 @@ const Hero = () => {
     
     <div className="hero-section">
       <div className="hero-second">
-        <img src="/src/assets/rr.png" alt="pokemon"/>
+        <img src="../src/assets/rr.png" alt="pokemon"/>
         <div className="btnContainer">
        <Link to={"/pokemon"}><button className="btn-23">
           <span className="text">Play </span>
