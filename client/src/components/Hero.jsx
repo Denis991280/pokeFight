@@ -1,5 +1,5 @@
 import {Link} from "react-router-dom"
-
+import hero from "/src/assets/rr.png"
 
 
 const Hero = () => {
@@ -8,7 +8,7 @@ const Hero = () => {
     
     <div className="hero-section">
       <div className="hero-second">
-        <img src="../src/assets/rr.png" alt="pokemon"/>
+        <img src={hero} alt="pokemon"/>
         <div className="btnContainer">
        <Link to={"/pokemon"}><button className="btn-23">
           <span className="text">Play </span>
