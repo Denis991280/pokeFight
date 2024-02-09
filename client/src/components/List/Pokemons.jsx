@@ -70,7 +70,7 @@ export default function Pokemons({ pokemon }) {
                     {pokemon.type[1] && (
                       <img
                         className="icon"
-                        src={`../src/assets/type_icons/${pokemon.type[1]}.png`}
+                        src={`${pokemon.type[1]}`}
                         alt={`Icon for pokemon type`}
                       />
                     )}
