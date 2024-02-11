@@ -9,6 +9,25 @@ import CardContent from "@mui/material/CardContent";
 import Typography from "@mui/material/Typography";
 import { CardActionArea } from "@mui/material";
 
+import BugIcon from "../../assets/icon-background/Bug.png";
+import DarkIcon from "../../assets/icon-background/Dark.png";
+import DragonIcon  from "../../assets/icon-background/Dragon.png";
+import ElectricIcon  from "../../assets/icon-background/Electric.png";
+import FairyIcon  from "../../assets/icon-background/Fairy.png";
+import FightingIcon  from "../../assets/icon-background/Fighting.png";
+import FireIcon  from "../../assets/icon-background/Fire.png";
+import FlyingIcon  from "../../assets/icon-background/Flying.png";
+import GhostIcon  from "../../assets/icon-background/Ghost.png";
+import GrassIcon  from "../../assets/icon-background/Grass.png";
+import GroundIcon  from "../../assets/icon-background/Ground.png";
+import IceIcon  from "../../assets/icon-background/Ice.png";
+import NormalIcon  from "../../assets/icon-background/Normal.png";
+import PoisonIcon  from "../../assets/icon-background/Poison.png";
+import PsychicIcon  from "../../assets/icon-background/Psychic.png";
+import RockIcon  from "../../assets/icon-background/Rock.png";
+import SteelIcon  from "../../assets/icon-background/Steel.png";
+import WaterIcon  from "../../assets/icon-background/Water.png";
+
 const PokemonSingle = () => {
   const [imgChosen, setImgChosen] = useState("imgChosenOff");
   const [imgOpponent, setImgOpponent] = useState("imgOpponentOff");
@@ -74,6 +93,7 @@ const PokemonSingle = () => {
     { spd: 0 },
   ]);
 
+
   const randomNum = Math.floor(Math.random() * 809);
 
   useEffect(() => {
@@ -92,6 +112,49 @@ const PokemonSingle = () => {
     }
   };
 
+  function getTypeImage(type) {
+    switch (type) {
+      case "Bug":
+        return BugIcon;
+      case "Dark":
+        return DarkIcon;
+      case "Dragon":
+        return DragonIcon;
+      case "Electric":
+        return ElectricIcon;
+      case "Fairy":
+        return FairyIcon;
+      case "Fighting":
+        return FightingIcon;
+      case "Fire":
+        return FireIcon;
+      case "Flying":
+        return FlyingIcon;
+      case "Ghost":
+        return GhostIcon;
+      case "Grass":
+        return GrassIcon;
+      case "Ground":
+        return GroundIcon;
+      case "Ice":
+        return IceIcon;
+      case "Normal":
+        return NormalIcon;
+      case "Poison":
+        return PoisonIcon;
+      case "Psychic":
+        return PsychicIcon;
+      case "Rock":
+        return RockIcon;
+      case "Steel":
+        return SteelIcon;
+      case "Water":
+        return WaterIcon;
+      default:
+        return null;
+    }
+  }
+
   const handlePlayer = (e) => {
     setPlayer(e.target.value);
     console.log(e.target.value);
@@ -101,6 +164,7 @@ const PokemonSingle = () => {
     try {
       const response = await axios.get(url);
       setPokemon([response.data]);
+      console.log(response.data)
       setChosenPokemonStats({
         hp: response.data.base.HP,
         atk: response.data.base.Attack,
@@ -572,7 +636,7 @@ const PokemonSingle = () => {
       player: player,
     };
     axios
-      .post("http://localhost:3000/battleLog", newLog)
+      .post("/api/battleLog", newLog)
       .then((response) => {
         console.log(response.data);
       })
@@ -636,9 +700,9 @@ const PokemonSingle = () => {
               <div class="bg-pokedex bg3-pokedex"></div>
               <div className="container-singlePoke">
                 <div className="img-name-container">
-                  <img
+                <img
                     className="inner-background"
-                    src={`../src/assets/icon-background/${element.type[0]}.png`}
+                    src={getTypeImage(element.type[0])}
                   ></img>
 
                   <img
