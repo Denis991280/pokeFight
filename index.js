@@ -16,7 +16,6 @@ app.use(express.static(path.resolve(__dirname, "client", "dist")));
 
 
 app.use("/api/pokemon", pokemonRouter)
-app.use("/api/battleLog", leaderboardRouter)
 app.use("/api/leaderboard", leaderboardRouter)
 
 app.get("/*", (req, res) => {

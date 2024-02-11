@@ -636,7 +636,7 @@ const PokemonSingle = () => {
       player: player,
     };
     axios
-      .post("/api/battleLog", newLog)
+      .post("/api/leaderboard/createNew", newLog)
       .then((response) => {
         console.log(response.data);
       })
